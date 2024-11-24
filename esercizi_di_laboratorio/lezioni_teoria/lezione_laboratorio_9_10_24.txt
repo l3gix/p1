@@ -1,0 +1,48 @@
+// lezione 9 - 10 - 24 Laboratorio 
+
+-> Costanti
+costante #define a 7 // fuori dal main 
+         -const int a = 7;
+
+variabile int a = 7;
+
+
+-> Funzioni I/0
+
+//output
+int printf(const char * format , ...);
+restituisce il numero di carattreri scritti 
+
+//input 
+int scanf(const char * format , ...);
+restituisce numero di oggeti distinti corettamente allocati 
+
+
+
+simboli con la percentuale chiamati specificatori 
+
+funzione sizeof() quanti byte sta occupando una variabile o per i tipi 
+
+tipi da piu grande a piu piccolo troncamento invece non il contrario 
+
+int i; 
+float x = 2.3, y = 4.5;
+i = x + y;
+il valore viene troncato valore di i = 6
+
+-> Conversione esplicita (cast)
+(tipo) Espressione 
+
+ES 
+int somma = 5 , n = 5;
+float media;
+
+media = somma / n; /* divsioni tra intei -> 2 */
+media = (float)somma / n ; // divisione tra reali -> 2.5 
+
+
+
+
+
+
+

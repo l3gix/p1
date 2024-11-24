@@ -1,0 +1,17 @@
+ double n,approsimazione,differnza;
+
+    n = 10;
+
+    approsimazione = n / 2.0;
+
+    differnza = n - approsimazione * approsimazione;
+
+    while (differnza > 0.00001)
+    {
+        approsimazione = (approsimazione + n / approsimazione) / 2.0;
+        differnza = n - approsimazione * approsimazione; 
+        
+    }
+
+
+    printf("%lf",approsimazione);

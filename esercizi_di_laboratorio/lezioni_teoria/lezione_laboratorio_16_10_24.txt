@@ -1,0 +1,19 @@
+lez 16 - 10 -2024
+
+variabili globale visibile a tutte fuori dal main 
+all interno nel main variabili locali
+
+variabile locale sofrascrive la variabile globale 
+
+
+Operatori Logici
+ 
+not va eseguito per primo 
+end priorità media 
+or ultima priorità
+
+
+not logico 
+aritmetici 
+relazinali 
+booleani 

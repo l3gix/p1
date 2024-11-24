@@ -1,0 +1,12 @@
+lez 23-10-24
+
+I Cicli
+
+
+while
+
+do while
+	esegue il blocco d'istruzioni almeno una volta 
+
+
+
