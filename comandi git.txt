@@ -1,0 +1,9 @@
+serve -> locale 
+
+git pull
+
+locale -> server 
+
+git add .
+git commit -m "hello"
+git push
