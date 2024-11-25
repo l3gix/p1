@@ -1,0 +1,19 @@
+---Alcune funzioni utili delle stringhe ---
+#include<string.h>
+
+strcpy(string copy)
+strcpy(char *destinazione , const char *sorgente)
+
+strlen(string length)
+strlen(const char *s)
+
+strcat(string concatenation)
+char *strcat(char *s1 , const char *s2)
+
+strcmp(string comparison)
+int strcmp(const char *s1 , const char *s2)
+
+return valore > 0 se s1 > s2 
+return valore < 0 se s1 < s2 
+
+return 0 se sono uguali
