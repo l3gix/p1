@@ -1,0 +1,4 @@
+char (*nomi)[N] diverso da *nomi[] 
+
+il primo indica un puntatore che punta ad un array ;
+il secondo array di puntatori ;
