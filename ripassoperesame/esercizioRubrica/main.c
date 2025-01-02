@@ -18,7 +18,7 @@ int validateInput()
         printf("Inserisci : ");
         scanf("%d",&a);
         printf("\n");
-    } while ((a <= 0)|| (a > 3) );
+    } while ((a <= 0)|| (a > 4) );
     
     return a;
 }
@@ -28,7 +28,8 @@ int scelta()
     printf("Inserisci \n");
     printf("1)Per stampare la rubrica\n");
     printf("2)Per inserire un nuovo contatto\n");
-    printf("3)Per uscire\n");
+    printf("3)Per eliminare un contatto\n");
+    printf("4)Per uscire\n");
     printf("------------------\n");
     return(validateInput());
 }
@@ -44,6 +45,7 @@ void writeFile(FILE *,Rubrica *,int dim);
 void insertContatto(Rubrica *,int pos,char *name,char *surname,char *phonenumber,int *dim);
 void insertNewContatto(Rubrica **,int *dim);
 void printRubrica(Rubrica *,int dim);
+Rubrica *deleteContatto(Rubrica *,int *dim);
 
 
 int main(int argc,char *argv[])
@@ -69,18 +71,19 @@ int main(int argc,char *argv[])
 
     while(b)
     {
-
             switch (scelta())
             {
             case 1:
                 printRubrica(r,dim);
                 break;
-            
             case 2:
                 insertNewContatto(&r,&dim);
                 break;
-            
             case 3:
+                printRubrica(r,dim);
+                r = deleteContatto(r,&dim);
+                break;
+            case 4:
                 writeFile(f,r,dim);
                 freeRubrica(r,dim);
                 fclose(f);
@@ -184,6 +187,38 @@ void insertNewContatto(Rubrica **r,int *dim)
     strcpy((*r)[ndim-1].name,name);
     strcpy((*r)[ndim-1].surname,surname);
     strcpy((*r)[ndim-1].phonenumber,phonenumber);
+}
+
+Rubrica *deleteContatto(Rubrica *r,int *dim)
+{
+    int pos, newdim = *dim,i,olddim = *dim;
+    Rubrica *t;
+
+    printf("Inserisci la posizione del contatto da eliminare : ");
+    scanf("%d",&pos);
+    pos--;
+    if(pos < 0 || pos > olddim)
+    {
+        printf("Indice della posizione incoretto\n");
+        return r;
+    }
+    newdim--;
+
+    allocRubrica(&t,newdim);
+
+    for(i = 0 ; i < olddim ; i++)
+    {
+        if ( i != pos)
+        {
+            strcpy(t[i].name,r[i].name);
+            strcpy(t[i].surname,r[i].surname);
+            strcpy(t[i].phonenumber,r[i].phonenumber);
+        }
+    }
+
+    freeRubrica(r,olddim);
+    (*dim)--;
+    return (t);
 }
 
 void printRubrica(Rubrica *r,int dim)
